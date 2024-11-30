@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="glass-panel">
+    <h1>Welcome to Ice Cream Shop</h1>
+    <p>You are a logged in user</p>
+    <div style="display: flex; gap: 10px; margin-top: 10px;">
+
+        <a href="{{ url_for('icecreamshop_bp.index') }}" class="nav-link" >Go to ice cream shop</a>
+        <a href="{{ url_for('user.logout') }}" class="nav-link">Logout</a>
+    </div>
+</div>
+{% endblock %}
+

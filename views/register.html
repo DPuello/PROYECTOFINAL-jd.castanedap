@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #1a1a1a;
+            color: #fff;
+        }
+        .login-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        input {
+            width: 100%;
+            padding: 0.75rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            box-sizing: border-box;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+        input:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        button {
+            width: 100%;
+            padding: 0.75rem;
+            background: rgba(0, 123, 255, 0.6);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            background: rgba(0, 123, 255, 0.8);
+            transform: translateY(-2px);
+        }
+        .error-message {
+            color: #ff4d4d;
+            margin-top: 1rem;
+            text-align: center;
+            text-shadow: 0 0 10px rgba(255, 77, 77, 0.3);
+        }
+        h2 {
+            color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .login-link {
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .login-link a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+        }
+        .login-link a:hover {
+            color: rgba(255, 255, 255, 1);
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Register</h2>
+        <form method="POST">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+            </div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <div class="form-group" style="display: flex; gap: 10px;">
+                    <label for="is_admin" ><div style="width: max-content;">Is Admin:</div></label>
+                    <input type="checkbox" id="is_admin" name="is_admin">
+                </div>
+                <div class="form-group" style="display: flex; gap: 10px;">
+                    <label for="is_employee" ><div style="width: max-content;">Is Employee:</div></label>
+                    <input type="checkbox" id="is_employee" name="is_employee">
+                </div>
+            </div>
+            <button type="submit">Register</button>
+            <div id="errorMessage" class="error-message"></div>
+            <div class="login-link">
+                Already have an account? <a href="/login">Login here</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

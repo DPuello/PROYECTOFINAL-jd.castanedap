@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="glass-panel">
+    <h1>Unauthorized</h1>
+    <p>You are not authorized to access this page</p>
+    <div style="display: flex; gap: 10px; margin-top: 10px;">
+
+        <a href="{{ url_for('user.welcome') }}" class="nav-link" >Go to welcome</a>
+        <a href="{{ url_for('user.logout') }}" class="nav-link">Logout</a>
+    </div>
+</div>
+{% endblock %}
+

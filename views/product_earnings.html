@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="nav">
+    <h1>Product Earnings: {{ product.name }}</h1>
+</div>
+
+<div class="glass-panel">
+    <p class="list_item"><strong>Price:</strong> {{ product.price }}</p>
+    <p class="list_item"><strong>Category:</strong> {{ product.category }}</p>
+    <p class="list_item"><strong>Calories:</strong> {{ product.calc_calories() }}</p>
+    <p class="list_item"><strong>Cost:</strong> {{ product.calc_cost() }}</p>
+    <p class="list_item"><strong>Earnings:</strong> {{ product.calc_earnings() }}</p>
+</div>
+
+{% endblock %}
