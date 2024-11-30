@@ -55,4 +55,4 @@ También hay una copia de la base de datos en el archivo `Dump.sql` en la carpet
 
 ## 📊 Diagrama Entidad Relación
 
-![Diagrama Entidad Relación](./Diagrama%20Entidad%20Relaci%C3%B3n.png)
+![Diagrama Entidad Relación](./Diagrama%20entidad%20relaci%C3%B3n.png)
