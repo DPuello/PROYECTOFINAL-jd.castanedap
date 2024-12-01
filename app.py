@@ -1,6 +1,7 @@
 import os
 from dotenv import load_dotenv
 from flask import Flask
+from flask_mysqldb import MySQL
 from flask_login import LoginManager
 from database.db import db, init_db
 from controllers.icecreamshop_controller import icecreamshop_blueprint
