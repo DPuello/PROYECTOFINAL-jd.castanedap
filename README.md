@@ -1,4 +1,4 @@
-# Módulo 3 - La HeladerAPI 🍨
+# Proyecto Final - Despliegue 🍨
 
 ## 📖 Descripción
 

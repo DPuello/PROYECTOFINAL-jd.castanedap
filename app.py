@@ -11,8 +11,7 @@ from models.user import User
 
 load_dotenv()
 app = Flask(__name__, template_folder="views")
-app.config["SQLALCHEMY_DATABASE_URI"] = f"mysql+pymysql://{os.getenv("DB_USERNAME")}:{os.getenv(
-    "DB_PASSWORD")}@{os.getenv("DB_HOST")}:{os.getenv("DB_PORT")}/{os.getenv("DB_NAME")}"
+app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DB_LINK")
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config["SECRET_KEY"] = os.getenv("SECRET_KEY", "dev")
 
