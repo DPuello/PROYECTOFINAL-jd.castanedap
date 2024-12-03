@@ -1,4 +1,5 @@
 from models.functions import get_best_product, bcolors
+from models.product import Product
 from database.db import db
 
 
@@ -71,7 +72,7 @@ class IceCreamShop(db.Model):
                 ingredient.spend()
 
             self.day_sales += 1
-            self.day_total_sold += product_to_sell.price
+            self.day_total_sold += float(product_to_sell.price)
             return True
         except Exception as e:
             return str(e)

@@ -41,6 +41,8 @@ def show(id):
 @product_blueprint.route("/products/by_name/<name>")
 @login_required
 def show_by_name(name):
+    if "%20" in name:
+        name = name.replace("%20", " ")
     product = Product.query.filter_by(name=name).first()
     if product is None:
         return jsonify({"error": "Product not found", "message": f"No product found with name: {name}", "success": False}), 404

@@ -35,13 +35,13 @@ class Ingredient(db.Model):
 
     def stock_up(self) -> None:
         if self.category == "Base":
-            self.stock += 5
+            self.stock += 5.0
         else:
-            self.stock += 10
+            self.stock += 10.0
 
     def renew_stock(self) -> None:
         if self.category == "Complement":
-            self.stock = 0
+            self.stock = 0.0
         else:
             raise ValueError("Base ingredients cannot be renewed")
     

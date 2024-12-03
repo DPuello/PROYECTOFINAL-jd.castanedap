@@ -50,6 +50,8 @@ def show(id):
 def show_by_name(name):
     if not current_user.is_admin and not current_user.is_employee:
         return redirect(url_for('user.unauthorized'))
+    if "%20" in name:
+        name = name.replace("%20", " ")
     ingredient = Ingredient.query.filter_by(name=name).first()
     if ingredient is None:
         return jsonify({"error": "Ingredient not found", "message": f"No ingredient found with name: {name}", "success": False}), 404
@@ -107,11 +109,11 @@ def stock(id_ingredient):
             ),
             404,
         )
-
-    old_stock = ingredient.stock
-    ingredient.stock_up()
-    db.session.commit()
-    return (
+    try:
+        old_stock = ingredient.stock
+        ingredient.stock_up()
+        db.session.commit()
+        return (
         jsonify(
             {
                 "success": True,
@@ -120,8 +122,13 @@ def stock(id_ingredient):
                 "old_stock": old_stock,
             }
         ),
-        200,
-    )
+            200,
+        )
+    except Exception as e:
+        return (
+            jsonify({"error": "Failed to stock up ingredient", "message": str(e)}),
+            500,
+        )
 
 
 @ingredient_blueprint.route("/renew/<id_ingredient>")
