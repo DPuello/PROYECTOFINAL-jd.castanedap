@@ -30,20 +30,23 @@ class IceCreamShop(db.Model):
         return len(self.products) < self.MAX_PRODUCTS
 
     def create_product(self, product_data):
-        """Create a new product with validation"""
-        if not self.can_add_product:
-            raise ValueError(f"Maximum number of products ({
+        try:
+            """Create a new product with validation"""
+            if not self.can_add_product:
+                raise ValueError(f"Maximum number of products ({
                              self.MAX_PRODUCTS}) reached")
 
-        # Create and add product logic here
-        new_product = Product(
-            name=product_data['name'],
-            price=product_data['price'],
-            category=product_data['category'],
-            id_ice_cream_shop=self.id
-        )
-        self.products.append(new_product)
-        return new_product
+            # Create and add product logic here
+            new_product = Product(
+                name=product_data['name'],
+                price=product_data['price'],
+                category=product_data['category'],
+                id_ice_cream_shop=self.id
+                )
+            self.products.append(new_product)
+            return new_product
+        except Exception as e:
+            return str(e)
 
     def get_best_product(self):
         product_list = [{"name": product.name,
