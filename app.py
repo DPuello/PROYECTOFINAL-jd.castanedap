@@ -10,14 +10,14 @@ from controllers.product_controller import product_blueprint
 from controllers.user_controller import user_blueprint
 from models.user import User
 
-file_path = os.path.join(os.path.abspath(os.getcwd()), "database", "site.db")
+# file_path = os.path.join(os.path.abspath(os.getcwd()), "database", "site.db")
 
-# load_dotenv()
+load_dotenv()
 app = Flask(__name__, template_folder="views")
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + file_path
-# app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DB_LINK")
+# app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + file_path
+app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DB_LINK")
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-app.config["SECRET_KEY"] = os.getenv("SECRET_KEY", "dev")
+app.config["SECRET_KEY"] = os.urandom(16)
 
 login_manager = LoginManager(app)
 login_manager.login_view = "user.login"
@@ -37,4 +37,4 @@ app.register_blueprint(product_blueprint)
 app.register_blueprint(user_blueprint)
 
 if __name__ == "__main__":
-    app.run(debug=False)
+    app.run(debug=True)
