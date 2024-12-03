@@ -32,9 +32,9 @@ class IceCreamShop(db.Model):
     def create_product(self, product_data):
         try:
             """Create a new product with validation"""
-            if not self.can_add_product:
-                raise ValueError(f"Maximum number of products ({
-                             self.MAX_PRODUCTS}) reached")
+            # if not self.can_add_product:
+            #     raise ValueError(f"Maximum number of products ({
+            #                  self.MAX_PRODUCTS}) reached")
 
             # Create and add product logic here
             new_product = Product(
