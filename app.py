@@ -1,5 +1,7 @@
 import os
 from dotenv import load_dotenv
+import pymysql
+pymysql.install_as_MySQLdb()
 from flask import Flask
 # from flask_mysqldb import MySQL
 from flask_login import LoginManager

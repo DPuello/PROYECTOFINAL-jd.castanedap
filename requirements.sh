@@ -15,3 +15,9 @@ sudo apt-get install -y \
 # Instalar dependencias opcionales (si hay problemas con otros paquetes Flask)
 echo "Instalando dependencias opcionales..."
 sudo apt-get install -y libssl-dev libffi-dev
+
+# Instalar las dependencias del proyecto
+echo "Instalando dependencias del proyecto..."
+pip install -r requirements.txt
+
+pip install mysqlclient
