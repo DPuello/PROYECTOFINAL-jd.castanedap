@@ -56,3 +56,8 @@ También hay una copia de la base de datos en el archivo `Dump.sql` en la carpet
 ## 📊 Diagrama Entidad Relación
 
 ![Diagrama Entidad Relación](./Diagrama%20entidad%20relacion.png)
+
+
+sudo apt-get update
+sudo apt-get install -y libmysqlclient-dev
+pip install -r requirements.txt
