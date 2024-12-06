@@ -1,5 +1,7 @@
 # Proyecto Final - Despliegue 🍨
 
+## Producción 🚀: https://proyectofinal-jd-castanedap.vercel.app/
+
 ## 📖 Descripción
 
 En este proyecto se simula una heladería con autenticación de usuarios y creación de endpoints para la venta de productos y administración de inventario.
@@ -56,8 +58,3 @@ También hay una copia de la base de datos en el archivo `Dump.sql` en la carpet
 ## 📊 Diagrama Entidad Relación
 
 ![Diagrama Entidad Relación](./Diagrama%20entidad%20relacion.png)
-
-
-sudo apt-get update
-sudo apt-get install -y libmysqlclient-dev
-pip install -r requirements.txt
